@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Read(One)</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'application/css/bootstrap.min.css' %}">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="mb-5">
+        <a href="/shows" class="float-right">Go Back</a>
+        <h2>TV Show {{ show.id }}</h2>
+    </div>
+    <p>Title: {{ show.title }}</p>
+    <p>Network: {{ show.network }}</p>
+    <p>Release Date: {{ show.release_date |date:"M d, Y" }}</p>
+    <p>Description: {{ show.description }}</p>
+
+    <div class="mt-5">
+        <p>Last Updated: {{ show.release_date }}</p>
+        <a href="/shows/{{ show.id }}/edit">Edit |</a><a href="/shows/{{ show.id }}/destroy">Delete</a>
+    </div>
+</div>
+
+</body>
+</html>
